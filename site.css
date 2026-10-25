@@ -69,7 +69,13 @@ form.sub input{flex:1 1 240px;font:inherit;font-size:17px;padding:14px 16px;bord
 form.sub button{font:inherit;font-weight:700;font-size:17px;padding:14px 22px;border:0;border-radius:4px;background:var(--hl);color:#111;cursor:pointer}
 img.photo{display:block;width:100%;object-fit:cover;border-radius:4px}
 @media (max-width:860px){
- .wrap{padding:0 22px}
+ .wrap{padding-left:22px;padding-right:22px}
+ .def tr{display:block;padding:14px 0;border-top:1px solid var(--rule)}
+ .def tr:last-child{border-bottom:1px solid var(--rule)}
+ .def td{display:block;width:auto!important;border:0!important;padding:0!important}
+ .def td:first-child{margin-bottom:4px}
+ .grid2>*,.side>*{min-width:0}
+ .thread>div{animation:none!important;opacity:1!important}
  h1{font-size:46px!important} h2{font-size:30px!important}
  .grid2,.side{grid-template-columns:1fr!important;gap:36px!important}
  .mark{padding-top:40px}
