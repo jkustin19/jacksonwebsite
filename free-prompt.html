@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free prompt · Jackson Kustin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="icon" href="assets/favicon.png">
+<meta name="description" content="Jackson Kustin builds AI systems that run your business and your life. 50+ agents built, 20+ hours a week back.">
+</head>
+<body>
+<header class="top wrap">
+<nav><a href="index.html">Home</a><a href="work.html">Work</a><a href="about.html">About</a><a href="free-prompt.html" class="on">Free prompt</a></nav>
+<a class="btn" href="https://calendly.com/jacksonkustin/30min">Book a call</a>
+</header>
+
+<section class="wrap" style="padding-top:72px">
+<div class="grid2" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr)">
+<div>
+<p class="eyebrow">Free prompt</p>
+<h1 style="font-size:60px">The Busywork <span class="hl">Audit</span></h1>
+<p class="lead" style="margin:28px 0 0">One deep prompt you paste into ChatGPT or Claude. It interviews you about your week, then hands back every task AI should be doing, the hours you'd get back, and the first three to automate.</p>
+<p class="pencil" style="margin:14px 0 0">Takes about 15 minutes. Same questions I ask on a first call.</p>
+<form class="sub" id="signup" novalidate>
+<input type="email" name="email" placeholder="you@company.com" aria-label="Email" autocomplete="email" required>
+<input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+<button type="submit">Send it to me</button>
+</form>
+<p class="pencil" id="signup-msg" style="margin:10px 0 0;font-size:14px" aria-live="polite">Straight to your inbox. No spam, unsubscribe any time.</p>
+<script>
+(function(){
+  var URL = "https://script.google.com/macros/s/AKfycbw_fMU2Iibf85HcFjex-d5_Cd2oEuis614Gq_68YhcBUAnfaAwUc2O06jOslrUNuPdK/exec";
+  var f = document.getElementById('signup'), m = document.getElementById('signup-msg'), b = f.querySelector('button');
+  f.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var email = f.email.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { m.textContent = "That email doesn’t look right. Try again?"; m.style.color = '#9B2C1F'; return; }
+    if (!URL) { m.textContent = "Signups aren’t connected yet."; return; }
+    b.disabled = true; b.textContent = 'Sending...'; m.style.color = '';
+    var body = new URLSearchParams({ email: email, website: f.website.value, source: location.pathname });
+    fetch(URL, { method: 'POST', mode: 'no-cors', body: body })
+      .then(function(){ f.style.display = 'none'; m.style.color = '#1D4B37'; m.style.fontSize = '17px'; m.style.fontWeight = '600';
+        m.textContent = 'Sent. Check your inbox for the prompt (and your spam folder, just in case).'; })
+      .catch(function(){ b.disabled = false; b.textContent = 'Send it to me'; m.style.color = '#9B2C1F';
+        m.textContent = 'Something went wrong. Try again, or email me at jacksonkustin@gmail.com.'; });
+  });
+})();
+</script>
+<table class="rows" style="margin-top:44px;max-width:520px;font-size:16px">
+<tr><td style="width:44px;font-weight:700;color:var(--green)">1</td><td>Every recurring task in your week, with hours per month</td></tr>
+<tr><td style="font-weight:700;color:var(--green)">2</td><td>A verdict on each: automate, AI drafts and you approve, or keep</td></tr>
+<tr><td style="font-weight:700;color:var(--green)">3</td><td>The first three to hand off, and a prompt to start the first one today</td></tr>
+</table>
+</div>
+<div class="promptbox">
+<div class="pencil" style="font-size:13px;margin-bottom:12px">busywork-audit.txt</div>
+<p style="margin:0 0 12px">You're my AI operations consultant. Your job is to find the work in my week that AI should be doing instead of me, and give me a plan I can start today.</p>
+<p style="margin:0 0 12px">Interview me first. Ask one question at a time, wait for my answer, and keep it conversational. Cover:</p>
+<p style="margin:0 0 6px">1. What I do and who I do it for: the business, my role, how big the team is.</p>
+<p style="margin:0 0 6px">2. Walk me through yesterday, from the first email to the last text. What did I touch?</p>
+<p style="margin:0 0 6px">3. What do I do every week that feels like copy and paste?</p>
+<p style="margin:0 0 6px">4. Where do things fall through the cracks: follow-ups, reminders, invoices, replies?</p>
+<p style="margin:0 0 6px">5. Which tools I live in: email, calendar, CRM, Slack, spreadsheets, notes.</p>
+<p style="margin:0 0 12px">6. What I'd never hand off, and why.</p>
+<p style="margin:0">Then build my Busywork Audit: every recurring task, hours per month, and a verdict for each...</p>
+<div class="fade">Enter your email for the full prompt</div>
+</div>
+</div>
+</section>
+
+<section class="wrap rule">
+<div class="cta">
+<h2 style="font-size:44px;max-width:640px">Doing something by hand that you <span class="hl">shouldn't be?</span></h2>
+<div><a class="btn" href="https://calendly.com/jacksonkustin/30min" style="font-size:17px;padding:16px 26px">Book a free 30-min call</a>
+<p class="pencil" style="margin:12px 0 0;font-size:15px">Come with the problems. I'll come with the possibilities.</p></div>
+</div>
+</section>
+<footer class="wrap">
+<span>© 2026 Jackson Kustin · New York City</span>
+<span><a href="mailto:jacksonkustin@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/jacksonkustin/">LinkedIn</a> · <a href="assets/Jackson-Kustin-Resume.pdf">Resume</a></span>
+</footer>
+</body>
+</html>
