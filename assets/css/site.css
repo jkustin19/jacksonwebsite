@@ -415,3 +415,23 @@ a { color: var(--orange); text-decoration: none; }
 .meta-row div { min-width: 150px; }
 .meta-row dt { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-45); margin-bottom: 6px; }
 .meta-row dd { margin: 0; font-size: 15px; font-weight: 500; }
+
+/* ---------- spec card (text visual, used where there's no screenshot) ---------- */
+.spec {
+  position: relative; aspect-ratio: 16/10; background: var(--ink); color: var(--cream);
+  padding: clamp(24px, 3vw, 36px); display: flex; flex-direction: column; justify-content: flex-end;
+  font-family: var(--mono); overflow: hidden; transition: transform .35s, box-shadow .35s;
+}
+.spec:hover { transform: translateY(-6px); box-shadow: 0 28px 48px rgba(21,20,15,0.16); }
+.spec .shot-tag { background: var(--orange); color: var(--ink); }
+.spec-big { font-family: var(--display); font-size: clamp(40px, 5vw, 64px); font-weight: 700; letter-spacing: -0.03em; line-height: 1; color: var(--orange); }
+.spec-label { font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; opacity: .7; margin-top: 6px; }
+.spec ul { list-style: none; padding: 0; margin: 18px 0 0; font-size: 12px; letter-spacing: .03em; line-height: 1.9; opacity: .9; }
+.spec li::before { content: "→ "; color: var(--orange); }
+.moment { background: var(--cream); border: 1px solid var(--rule); padding: clamp(22px, 2.4vw, 30px); }
+.section--sand .moment { background: var(--sand); }
+.moment-time { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--orange); margin-bottom: 10px; }
+.moment p { font-family: var(--serif); font-style: italic; font-size: 19px; line-height: 1.45; margin: 0; }
+/* fix: reversed work rows put the visual in the 64px number column */
+.work-row.is-reversed { grid-template-columns: 1.1fr 64px 1fr; }
+@media (max-width: 900px) { .work-row.is-reversed { grid-template-columns: 1fr; } }
